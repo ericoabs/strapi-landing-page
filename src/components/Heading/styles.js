@@ -1,3 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.h1`
+  ${({ theme, light }) => css`
+    color: ${light ? theme.colors.white : theme.colors.primaryColor};
+  `}
+`;
