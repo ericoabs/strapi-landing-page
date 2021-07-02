@@ -31,6 +31,6 @@ describe('<MenuLink />', () => {
         Children
       </MenuLink>,
     );
-    expect(container).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

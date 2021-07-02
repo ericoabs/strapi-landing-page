@@ -7,11 +7,9 @@ exports[`<Heading /> should render with uppercase letters 1`] = `
   text-transform: uppercase;
 }
 
-<div>
-  <h1
-    class="c0"
-  >
-    texto
-  </h1>
-</div>
+<h1
+  class="c0"
+>
+  texto
+</h1>
 `;

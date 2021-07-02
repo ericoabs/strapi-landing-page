@@ -75,15 +75,6 @@ describe('<Heading />', () => {
   });
 
   it('should render with uppercase letters', () => {
-    const { container } = renderTheme(
-      <Heading size={'big'} uppercase>
-        texto
-      </Heading>,
-    );
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render with uppercase letters', () => {
     renderTheme(
       <Heading size={'big'} uppercase>
         texto
@@ -94,5 +85,14 @@ describe('<Heading />', () => {
     expect(heading).toHaveStyle({
       'text-transform': 'uppercase',
     });
+  });
+
+  it('should render with uppercase letters', () => {
+    const { container } = renderTheme(
+      <Heading size={'big'} uppercase>
+        texto
+      </Heading>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

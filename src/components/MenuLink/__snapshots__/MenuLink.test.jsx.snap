@@ -28,13 +28,11 @@ exports[`<MenuLink /> should match snapshot 1`] = `
   width: 50%;
 }
 
-<div>
-  <a
-    class="c0"
-    href="http://localhost"
-    target="_self"
-  >
-    Children
-  </a>
-</div>
+<a
+  class="c0"
+  href="http://localhost"
+  target="_self"
+>
+  Children
+</a>
 `;
