@@ -4,7 +4,10 @@ export default {
   title: 'TextComponent',
   component: TextComponent,
   args: {
-    children: 'TextComponent',
+    children: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat,
+    omnis et impedit totam voluptatem pariatur dolorum sapiente. Ipsam sint,
+     nulla facilis in nemo voluptatem, distinctio nam nesciunt perspiciatis
+      dicta beatae!`,
   },
   argTypes: {
     children: { type: 'string' },

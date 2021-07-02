@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should render with uppercase letters 1`] = `
+.c0 {
+  color: #0A1128;
+  font-size: 4.0rem;
+  text-transform: uppercase;
+}
+
+<div>
+  <h1
+    class="c0"
+  >
+    texto
+  </h1>
+</div>
+`;
