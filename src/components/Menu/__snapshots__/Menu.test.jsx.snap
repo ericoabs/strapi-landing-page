@@ -19,7 +19,7 @@ exports[`<Menu /> should not render links 1`] = `
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  width: 100%;
   border-bottom: #DDDDDD;
   background: #FFFFFF;
   -webkit-transition: all 300ms ease-in-out;
@@ -140,7 +140,7 @@ exports[`<Menu /> should not render links 1`] = `
   .c5 {
     display: block;
     text-align: center;
-    padding: 4.8rem;
+    padding: 4.8rem 0;
   }
 }
 
@@ -243,7 +243,7 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  width: 100%;
   border-bottom: #DDDDDD;
   background: #FFFFFF;
   -webkit-transition: all 300ms ease-in-out;
@@ -391,7 +391,7 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
   .c5 {
     display: block;
     text-align: center;
-    padding: 4.8rem;
+    padding: 4.8rem 0;
   }
 }
 
