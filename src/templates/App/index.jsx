@@ -1,13 +1,10 @@
 import * as Styled from './styles';
 
+import { mockBase } from '../Base/stories';
+import { Base } from '../Base';
+
 function Home() {
-  return (
-    <div className="App">
-      <Styled.Container>
-        <h1>Hello World</h1>
-      </Styled.Container>
-    </div>
-  );
+  return <Base {...mockBase} />;
 }
 
 export default Home;
