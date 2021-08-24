@@ -67,7 +67,7 @@ export const mapTextGrid = (section = {}) => {
   } = section;
 
   return {
-    component,
+    component: 'section.section-grid',
     title,
     description,
     background,

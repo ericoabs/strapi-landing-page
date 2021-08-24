@@ -101,7 +101,7 @@ describe('map-sections', () => {
   it('should map section text grid with no data', () => {
     const data = mapTextGrid(undefined);
     expect(data.background).toBe(false);
-    expect(data.component).toBe('');
+    expect(data.component).toBe('section.section-grid');
     expect(data.sectionId).toBe('');
     expect(data.description).toBe('');
     expect(data.title).toBe('');
