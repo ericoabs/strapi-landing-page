@@ -2,6 +2,7 @@ import {
   mapSectionContent,
   mapSections,
   mapSectionTwoColumns,
+  mapTextGrid,
 } from './map-sections';
 
 describe('map-sections', () => {
@@ -10,7 +11,7 @@ describe('map-sections', () => {
     expect(data).toEqual([]);
   });
 
-  it('should map section two columns', () => {
+  it('should map section two columns with no data', () => {
     const data = mapSectionTwoColumns();
     expect(data.background).toBe(false);
     expect(data.component).toBe('');
@@ -50,10 +51,9 @@ describe('map-sections', () => {
     expect(data.title).toBe('');
   });
 
-  it('should map section content with no data', () => {
+  it('should map section content', () => {
     const data = mapSectionContent({
       __component: 'section.section-content',
-      _id: '60cfa420ee3ac13a770e72f3',
       content: 'abc',
       title: 'news coverage and some surprises',
       metadata: {
@@ -61,15 +61,49 @@ describe('map-sections', () => {
         _id: '60cfa420ee3ac13a770e72f5',
         name: 'intro',
         section_id: 'intro',
-        __v: 0,
-        id: '60cfa420ee3ac13a770e72f5',
       },
-      id: '60cfa420ee3ac13a770e72f3',
     });
     expect(data.background).toBe(false);
     expect(data.component).toBe('section.section-content');
     expect(data.sectionId).toBe('intro');
     expect(data.html).toBe('abc');
     expect(data.title).toBe('news coverage and some surprises');
+  });
+
+  it('should map section text grid', () => {
+    const data = mapTextGrid({
+      __component: 'section.section-grid',
+      title: 'My Grid',
+      description: 'abc',
+      text_grid: [
+        {
+          _id: '60cfa492ee3ac13a770e730b',
+          title: 'Teste 1',
+          description: 'abc',
+          id: '60cfa492ee3ac13a770e730b',
+        },
+      ],
+      metadata: {
+        background: true,
+        name: 'grid-one',
+        section_id: 'grid-one',
+      },
+    });
+    expect(data.background).toBe(true);
+    expect(data.component).toBe('section.section-grid');
+    expect(data.sectionId).toBe('grid-one');
+    expect(data.description).toBe('abc');
+    expect(data.title).toBe('My Grid');
+    expect(data.grid[0].title).toBe('Teste 1');
+    expect(data.grid[0].description).toBe('abc');
+  });
+
+  it('should map section text grid with no data', () => {
+    const data = mapTextGrid(undefined);
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.description).toBe('');
+    expect(data.title).toBe('');
   });
 });
