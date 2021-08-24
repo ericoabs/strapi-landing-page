@@ -108,21 +108,48 @@ describe('map-sections', () => {
     expect(data.title).toBe('');
   });
 
-  // it('should map section grid image', () => {
-  //   const data = mapImageGrid(undefined);
-  //   expect(data.background).toBe(false);
-  //   expect(data.component).toBe('section.section-grid');
-  //   expect(data.sectionId).toBe('');
-  //   expect(data.description).toBe('');
-  //   expect(data.title).toBe('');
-  // });
+  it('should map section grid image', () => {
+    const data = mapImageGrid(undefined);
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-grid-image');
+    expect(data.sectionId).toBe('');
+    expect(data.description).toBe('');
+    expect(data.title).toBe('');
+  });
 
-  // it('should map section text grid with no data', () => {
-  //   const data = mapImageGrid(undefined);
-  //   expect(data.background).toBe(false);
-  //   expect(data.component).toBe('section.section-grid');
-  //   expect(data.sectionId).toBe('');
-  //   expect(data.description).toBe('');
-  //   expect(data.title).toBe('');
-  // });
+  it('should map section grid image with data', () => {
+    const data = mapImageGrid({
+      __component: 'section.section-grid',
+      title: 'Gallery',
+      description: 'abc',
+      image_grid: [
+        {
+          _id: '60cfa67fee3ac13a770e7327',
+          image: {
+            _id: '60cfa5fdee3ac13a770e7320',
+            name: 'https://source.unsplash.com/random/360x360?r=1',
+            alternativeText: 'Uma Mercedez em preto e branco',
+            caption: 'Uma Mercedez em preto e branco',
+            url: 'a.svg',
+            provider_metadata: {
+              public_id: '360x360_r_1_b54120d200',
+              resource_type: 'image',
+            },
+          },
+        },
+      ],
+      metadata: {
+        background: false,
+        name: 'gallery',
+        section_id: 'gallery',
+      },
+    });
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-grid-image');
+    expect(data.sectionId).toBe('gallery');
+    expect(data.description).toBe('abc');
+    expect(data.title).toBe('Gallery');
+    expect(data.grid[0].srcImg).toBe('a.svg');
+    expect(data.grid[0].altText).toBe('Uma Mercedez em preto e branco');
+  });
 });
