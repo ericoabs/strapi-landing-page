@@ -46,6 +46,9 @@ function Home() {
   const { menu, sections, footerHtml, slug } = data;
   const { links, text, link, srcImg } = menu;
 
+  console.log(srcImg);
+  console.log(text);
+
   return (
     <Base
       links={links}
