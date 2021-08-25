@@ -93,7 +93,6 @@ describe('map-sections', () => {
       title: 'news coverage and some surprises',
       metadata: {
         background: false,
-        _id: '60cfa420ee3ac13a770e72f5',
         name: 'intro',
         section_id: 'intro',
       },
@@ -112,10 +111,8 @@ describe('map-sections', () => {
       description: 'abc',
       text_grid: [
         {
-          _id: '60cfa492ee3ac13a770e730b',
           title: 'Teste 1',
           description: 'abc',
-          id: '60cfa492ee3ac13a770e730b',
         },
       ],
       metadata: {
@@ -158,17 +155,9 @@ describe('map-sections', () => {
       description: 'abc',
       image_grid: [
         {
-          _id: '60cfa67fee3ac13a770e7327',
           image: {
-            _id: '60cfa5fdee3ac13a770e7320',
-            name: 'https://source.unsplash.com/random/360x360?r=1',
             alternativeText: 'Uma Mercedez em preto e branco',
-            caption: 'Uma Mercedez em preto e branco',
             url: 'a.svg',
-            provider_metadata: {
-              public_id: '360x360_r_1_b54120d200',
-              resource_type: 'image',
-            },
           },
         },
       ],
