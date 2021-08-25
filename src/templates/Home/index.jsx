@@ -1,6 +1,8 @@
 import * as Styled from './styles';
 import { useEffect, useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
+
 import { mapData } from '../../api/map-data';
 
 import { Base } from '../Base';
@@ -17,13 +19,15 @@ import { GridTwoColumns } from '../../components/GridTwoColumns';
 
 function Home() {
   const [data, setData] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
+    const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
+    const slug = pathName ? pathName : 'landing-page';
+
     const load = async () => {
       try {
-        const data = await fetch(
-          'http://localhost:1337/pages/?slug=landing-page',
-        );
+        const data = await fetch('http://localhost:1337/pages/?slug=' + slug);
         const json = await data.json();
         const pageData = mapData(json);
         setData(pageData[0]);
@@ -33,7 +37,7 @@ function Home() {
     };
 
     load();
-  }, []);
+  }, [location]);
 
   if (data === undefined) {
     return <PageNotFound />;
