@@ -12,9 +12,14 @@ export const Container = styled.div`
 
 export const Grid = styled.div`
   ${({ theme }) => css`
+    margin-top: 2.4rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${theme.spacings.large};
+
+    @media ${theme.media.lteMedium} {
+      grid-template-columns: 1fr;
+    }
   `}
 `;
 

@@ -31,4 +31,13 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.colors.secondaryColor};
   }
+
+  td {
+    padding: ${({ theme }) => theme.spacings.xsmall};
+  }
+
+  .table {
+    width: 100%;
+    overflow-y: auto;
+  }
 `;
