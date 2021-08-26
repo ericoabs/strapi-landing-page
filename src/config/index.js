@@ -1,5 +1,5 @@
 export default {
-  url: 'http://localhost:1337/pages/?slug=',
+  url: 'https://calm-eyrie-66953.herokuapp.com/pages/?slug=',
   siteName: 'Erico Alexandre',
   defaultSlug: 'landing-page',
 };
